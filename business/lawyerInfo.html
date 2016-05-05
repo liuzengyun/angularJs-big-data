@@ -1,0 +1,1417 @@
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12 col-xs-12 text-right" style="margin-bottom: 10px">
+            <a href="#/cooperation/{{lawyer.phone}}">
+                <button class="btn btn-primary">查看合作情况</button>
+            </a>
+            <span style="display: none" class="lawyerId">{{lawyer.id}}</span>
+        </div>
+    </div>
+    <div id="lawyerInfo">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="glyphicon glyphicon-edit pull-right" style="cursor:pointer" data-toggle="modal"
+                      data-target="#baseInfo">
+                        </span>
+                <div class="icon">
+                    <p style="font-size: 20px">{{lawyer.name}} <a style="margin-left: 20px; font-size: 14px">{{lawyer.type}}</a>
+                    </p>
+                </div>
+                <p>{{lawyer.position}} - {{lawyer.firm}}</p>
+                <p class="importInfo">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    {{lawyer.country}}-{{lawyer.province}}-{{lawyer.city}}&nbsp;&nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-phone"></span>
+                    {{lawyer.phone}}&nbsp;&nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-phone-alt"></span>
+                    {{lawyer.tel}}&nbsp;&nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    {{lawyer.email}}&nbsp;&nbsp;&nbsp;
+                    微信: {{lawyer.wechat}}
+                </p>
+                <div class="table-responsive">
+                    <table class="table" width="100%" style="margin-bottom:0px">
+                        <tr>
+                            <td>家乡: <span>{{lawyer.hometown}}</span></td>
+                            <td>进入数据库方式: <span>{{lawyer.input_mode}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>联系地址: <span>{{lawyer.address}}</span></td>
+                            <td>专业: <span class="major">{{lawyer.major}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>性格特点: <span>{{lawyer.personality}}</span></td>
+                            <td>性别: <span class="sex">{{lawyer.sex}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>原执业法院级别: <span class="court_level">{{lawyer.court_level}}</span></td>
+                            <td>原业务庭室: <span class="business">{{lawyer.business_court}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>建档人: <span class="court_level">{{lawyer.create_by}}</span></td>
+                            <td>建档时间: <span class="business">{{lawyer.create_time}}</span></td>
+                        </tr>
+                        <!--<tr>-->
+                        <!--<td>合作次数: <span class="court_level">{{lawyer.cooperate}}次</span></td>-->
+                        <!--<td>合作成功次数: <span class="business">{{lawyer.bussiness_suc}}次</span></td>-->
+                        <!--</tr>-->
+                        <tr>
+                            <td colspan="2">专属信息: <span class="court_level">{{lawyer.exclusive}}</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">个人简介: <span class="court_level">{{lawyer.synopsis}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>是否团队管理: <span class="court_level">{{lawyer.team_type}}</span></td>
+                            <td>擅长领域:
+                                <span class="court_level" ng-repeat="info in lawyer.practice_areas">{{info.a}}&nbsp;&nbsp;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                律所类型:
+                                {{lawyer.firm_type}}
+                            </td>
+                            <td>社会职务:
+                                <span ng-repeat="info in lawyer.social_functions">{{info.a}}&nbsp;&nbsp;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                备注: {{lawyer.remark}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--修改基本信息弹出框 开始-->
+        <form role="form">
+            <div class="modal fade text-left" id="baseInfo" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>修改基本信息</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>姓名<span style="color: red">*</span></label><span id="name">姓名不能为空</span>
+                                <input type="text" class="form-control name" ng-model="lawyer.name"
+                                       style="display: block">
+                            </div>
+                            <div class="form-group">
+                                <label>手机号<span style="color: red">*</span></label><span id="phone">手机号码不能为空</span>
+                                <input type="text" class="form-control phone" ng-model="lawyer.phone"
+                                       style="display: block">
+                            </div>
+                            <div class="form-group">
+                                <label>性别</label>
+                                <select class="form-control sex" ng-model="lawyer.sex">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>邮箱</label>
+                                <input type="text" class="form-control email" ng-model="lawyer.email">
+                            </div>
+                            <div class="form-group">
+                                <label>律所<span style="color: red">*</span></label><span id="firm">律所不能为空</span>
+                                <input type="text" class="form-control firm" ng-model="lawyer.firm"
+                                       style="display: block">
+                            </div>
+                            <div class="form-group">
+                                <label>职位</label>
+                                <input type="text" class="form-control position" ng-model="lawyer.position">
+                            </div>
+                            <div class="form-group">
+                                <label>座机</label>
+                                <input type="text" class="form-control tel" ng-model="lawyer.tel">
+                            </div>
+                            <div class="form-group">
+                                <label>国家<span style="color: red">*</span></label>
+                                <input type="text" class="form-control country" ng-model="lawyer.country">
+                            </div>
+                            <div class="form-group">
+                                <label>省份<span style="color: red">*</span></label>
+                                <input type="text" class="form-control province" ng-model="lawyer.province">
+                            </div>
+                            <div class="form-group">
+                                <label>城市</label>
+                                <input type="text" class="form-control city" ng-model="lawyer.city"
+                                       style="display: block">
+                            </div>
+                            <div class="form-group">
+                                <label>地址</label>
+                                <input type="text" class="form-control address" ng-model="lawyer.address">
+                            </div>
+                            <div class="form-group">
+                                <label>微信号</label>
+                                <input type="text" class="form-control wechat" ng-model="lawyer.wechat">
+                            </div>
+                            <div class="form-group">
+                                <label>故乡</label>
+                                <input type="text" class="form-control hometown" ng-model="lawyer.hometown">
+                            </div>
+                            <div class="form-group">
+                                <label>专业<span style="color: red">*</span></label>
+                                <select class="form-control mymajor" ng-model="lawyer.major">
+                                    <option value="民事">民事</option>
+                                    <option value="商事">商事</option>
+                                    <option value="知识产权">知识产权</option>
+                                    <option value="涉外">涉外</option>
+                                    <option value="刑事">刑事</option>
+                                    <option value="行政">行政</option>
+                                    <option value="环保">环保</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>原业务庭室</label>
+                                <select class="form-control court_level" ng-model="lawyer.business_court">
+                                    <option value="" selected="selected">如果不是离职法官请不要填写此项</option>
+                                    <option value="没有">没有</option>
+                                    <option value="民事">民事</option>
+                                    <option value="商事">商事</option>
+                                    <option value="知识产权">知识产权</option>
+                                    <option value="涉外">涉外</option>
+                                    <option value="刑事">刑事</option>
+                                    <option value="行政">行政</option>
+                                    <option value="环保">环保</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>原执业法院级别</label>
+                                <select class="form-control business_court" ng-model="lawyer.court_level">
+                                    <option value="" selected="selected">如果不是离职法官请不要填写此项</option>
+                                    <option value="没有">没有</option>
+                                    <option value="最高院">最高院</option>
+                                    <option value="高院">高院</option>
+                                    <option value="中院">中院</option>
+                                    <option value="基层法院">基层法院</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>律师类型<span style="color: red">*</span></label>
+                                <select class="form-control type" ng-model="lawyer.type">
+                                    <option value="普通律师">普通律师</option>
+                                    <option value="资深律师">资深律师</option>
+                                    <option value="离职法官律师">离职法官律师</option>
+                                    <option value="次重要律师">次重要律师</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>专属信息</label>
+                                <input type="text" class="form-control exclusive" ng-model="lawyer.exclusive">
+                            </div>
+                            <div class="form-group">
+                                <label>性格特点</label>
+                                <input type="text" class="form-control personality" ng-model="lawyer.personality">
+                            </div>
+                            <div class="form-group">
+                                <label>个人简介</label>
+                                <input type="text" class="form-control synopsis" ng-model="lawyer.synopsis">
+                            </div>
+                            <div class="form-group">
+                                <label>律所类型</label><span style="color: red; margin-top: 8px;">*</span>
+                                <p class="firm_type">
+                                    <input type="radio" name="firm" value="1"/> 总部 &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="firm" value="2"/> 分所
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>擅长领域</label><span style="color: red; margin-top: 8px;">*</span>
+                                <p>
+                                    <select class="form-control" id="linkage">
+                                        <option value="" selected="selected">请选择擅长领域</option>
+                                        <option value="1" class="one">民商事</option>
+                                        <option value="2" class="two">刑事</option>
+                                        <option value="3" class="three">行政</option>
+                                        <option value="4" class="four">知识产权/竞争</option>
+                                        <option value="5" class="five">国家赔偿</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="child">
+                                <p>
+                                    <select class="form-control oneChild">
+                                        <option value="" selected="selected">请选择擅长领域</option>
+                                        <option>物权</option>
+                                        <option>合同债权</option>
+                                        <option>侵权责任</option>
+                                        <option>婚姻家庭/亲属继承</option>
+                                        <option>公司股权</option>
+                                        <option>股东权利与义务/高管权利与义务</option>
+                                        <option>证券/票据</option>
+                                        <option>保险</option>
+                                        <option>海事海商</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="form-control twoChild">
+                                        <option value="" selected="selected">请选择擅长领域</option>
+                                        <option>危害国家安全/危害公共安全</option>
+                                        <option>破坏市场经济秩序</option>
+                                        <option>侵犯公民人身权利民主权利</option>
+                                        <option>侵犯财产</option>
+                                        <option>妨害社会管理秩序/危害国防利益</option>
+                                        <option>贪污贿赂/渎职</option>
+                                        <option>军人违反职责</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="form-control threeChild">
+                                        <option value="" selected="selected">请选择擅长领域</option>
+                                        <option>行政作为/行政不作为</option>
+                                        <option>行政行为</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="form-control fourChild">
+                                        <option value="" selected="selected">请选择擅长领域</option>
+                                        <option>商标</option>
+                                        <option>专利</option>
+                                        <option>著作权</option>
+                                        <option>反垄断</option>
+                                        <option>反不正当竞争</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="form-control fiveChild">
+                                        <option value="行政赔偿">行政赔偿</option>
+                                        <option value="司法赔偿">司法赔偿</option>
+                                    </select>
+                                </p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-11 col-xs-11">
+                                    <p class="leadLawyer team_type">
+                                        <input type="radio" name="team" class="team"/> 非团队管理律师 &nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="team" class="noteam"/> 团队管理律师
+                                    </p>
+                                    <p class="boss">
+                                        <input type="text" class="form-control lawyer_name" placeholder="团队管理律师姓名"/>
+                                    </p>
+                                </div>
+                                <div class="col-sm-1 col-xs-1">
+                                    <p>
+                                        <span
+                                                class="pull-right" style="color: red;">*</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="from-group">
+                                <label>备注</label>
+                                <p>
+                                    <textarea class="remark form-control" ng-model="lawyer.remark"></textarea>
+                                </p>
+                            </div>
+                            <label>社会职务</label>
+                            <p ng-repeat="info in lawyer.social_functions">
+                                <input class="social_functions form-control" value="{{info.a}}" ng-hide="info.a==''"/>
+                            </p>
+                            <p>
+                                <button class="btn btn-info" id="sub">修改</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--修改基本信息弹出框 结束-->
+        <div class="panel panel-body">
+            <p style="font-size: 20px; margin-top: 20px;">
+                <span class="glyphicon glyphicon-check"></span>
+                互动情况
+            </p>
+            <p class="text-right">
+                <span class="glyphicon glyphicon-plus" style="cursor: pointer" data-toggle="modal"
+                      data-target="#addInteraction">
+            </span>
+            </p>
+            <!--循环互动信息列表-->
+            <div ng-repeat="info in lawyer_interact" style="border-bottom: 1px dotted #aaa; padding: 10px 0px">
+                <span class="pull-right">
+                        <span class="glyphicon glyphicon-edit sessionEdit" style="cursor:pointer"
+                              data-toggle="modal"
+                              data-target="#editInteraction"
+                              ng-click="insessionID(info.id, info.form, info.details, info.time, info.comment)">
+                        </span>&nbsp;
+                        <span class="glyphicon glyphicon-remove" style="cursor:pointer"
+                              ng-click="deleteInstract(info.id)">
+                        </span>
+                </span>
+                <div>
+                    <p>互动时间: <b style="font-size: 16px;">{{info.time}}</b></p>
+                    <p>互动者: {{info.u_name}}</p>
+                    <p>互动方式: {{info.form}}</p>
+                    <p><b>互动详情:</b> {{info.details}}</p>
+                    <p><b>点<span style="margin: 14px"></span>评: </b>{{info.comment}}</p>
+                </div>
+            </div>
+        </div>
+        <!--添加互动信息 开始-->
+        <div class="modal fade text-left" id="addInteraction" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="addModalLabel">
+                            添加互动情况
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <select class="form-control" ng-model="form">
+                                <option value="" selected="selected">选择互动形式</option>
+                                <option>电话</option>
+                                <option>信息</option>
+                                <option>会面</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>互动详情</label>
+                            <textarea class="form-control" class="form-control" ng-model="details"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>互动时间</label>
+                            <input type="date" class="form-control" ng-model="time"/>
+                        </div>
+                        <div class="form-group">
+                            <label>点评</label>
+                            <textarea class="form-control" ng-model="comment"
+                                      placeholder="点评,包含对客户的性 格分析,需求分析,以及案源的进展 情况,以及经验的总结"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="addInstract()" data-dismiss="modal">
+                            添加
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--添加互动信息 结束-->
+
+        <!-- 修改互动信息 开始-->
+        <div class="modal fade text-left" id="editInteraction" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="editModalLabel">
+                            修改互动情况
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <select class="form-control" ng-model="form">
+                                <option value="" selected="selected">选择互动形式</option>
+                                <option value="电话">电话</option>
+                                <option value="信息">信息</option>
+                                <option value="会面">会面</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>互动详情</label>
+                            <textarea class="form-control" class="form-control" ng-model="details"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>互动时间</label>
+                            <input type="text" class="form-control" ng-model="time" disabled/>
+                        </div>
+                        <div class="form-group">
+                            <label>点评</label>
+                            <textarea class="form-control" ng-model="comment"
+                                      placeholder="点评,包含对客户的性 格分析,需求分析,以及案源的进展 情况,以及经验的总结"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="editInstract()"
+                                data-dismiss="modal">
+                            修改
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 修改互动信息 结束-->
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p style="font-size: 20px; margin-top: 20px;">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                    教育经历
+                </p>
+                <p class="text-right">
+                    <span class="glyphicon glyphicon-plus" data-toggle="modal" style="cursor:pointer"
+                          data-target="#addEdu">
+                    </span>
+                </p>
+                <div ng-repeat="info in lawyer_edu" style="border-bottom: 1px dotted #aaa; padding: 10px 0px">
+                    <span class="pull-right">
+                            <span class="glyphicon glyphicon-edit sessionEdit" style="cursor:pointer"
+                                  data-toggle="modal"
+                                  data-target="#editEdu"
+                                  ng-click="edusessionID(info.id, info.start_time, info.end_time, info.school, info.major, info.academic_degree)">
+                            </span>
+
+                            <span class="glyphicon glyphicon-remove" style="cursor:pointer"
+                                  ng-click="deleteEdu(info.id)">
+
+                            </span>
+                    </span>
+                    <div>
+                        <p>
+                            开始时间: <span> {{info.start_time}}</span>
+                        </p>
+                        <p>
+                            结束时间: <span> {{info.end_time}}</span>
+                        </p>
+                        <p>
+                            学<span style="margin: 14px"></span>校: <span> {{info.school}}</span>
+                        </p>
+                        <p>
+                            专<span style="margin: 14px"></span>业: <span> {{info.major}}</span>
+                        </p>
+                        <p>
+                            学<span style="margin: 14px"></span>历: <span> {{info.academic_degree}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--添加教育经历 开始-->
+        <form role="form">
+            <div class="modal fade text-left" tabindex="-1" id="addEdu" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>添加教育经历</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>开始时间</label>
+                                <input type="date" class="start_time form-control" ng-model="start_time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>结束时间</label>
+                                <input type="date" class="end_time form-control" ng-model="end_time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>学校</label>
+                                <input type="text" class="school form-control" ng-model="school"/>
+                            </div>
+                            <div class="form-group">
+                                <label>专业</label>
+                                <input type="major" class="form-control" ng-model="major"/>
+                            </div>
+                            <div class="form-group">
+                                <label>学位</label>
+                                <select class="form-control academic_degree" ng-model="academic_degree">
+                                    <option value="学士">学士</option>
+                                    <option value="硕士">硕士</option>
+                                    <option value="博士">博士</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-info" ng-click="addEdu()">添加</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--添加教育经历 结束-->
+
+        <!--修改教育经历 开始-->
+        <form role="form">
+            <div class="modal fade text-left" tabindex="-1" id="editEdu" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>修改教育经历</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>开始时间</label>
+                                <input type="text" class="start_time form-control" ng-model="start_time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>结束时间</label>
+                                <input type="text" class="end_time form-control" ng-model="end_time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>学校</label>
+                                <input type="text" class="school form-control" ng-model="school"/>
+                            </div>
+                            <div class="form-group">
+                                <label>专业</label>
+                                <input type="major" class="form-control" ng-model="major"/>
+                            </div>
+                            <div class="form-group">
+                                <label>学位</label>
+                                <select class="form-control academic_degree" ng-model="academic_degree">
+                                    <option value="学士">学士</option>
+                                    <option value="硕士">硕士</option>
+                                    <option value="博士">博士</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-info" ng-click="eidtEdu()">修改</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--修改教育经历 结束-->
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p style="font-size: 20px; margin-top: 20px;">
+                    <span class="glyphicon glyphicon-random"></span>
+                    工作背景
+                </p>
+                <p class="text-right">
+                    <span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#addExp"
+                          style="cursor: pointer">
+                    </span>
+                </p>
+                <div ng-repeat="info in lawyer_exp" style="border-bottom: 1px dotted #aaa; padding: 10px 0px">
+                    <span class="pull-right">
+                            <span class="glyphicon glyphicon-edit sessionEdit" style="cursor: pointer"
+                                  data-toggle="modal"
+                                  data-target="#editExp"
+                                  ng-click="worksessionID(info.id, info.start_time, info.end_time, info.company, info.position, info.department, info.license_number)">
+                            </span>
+                            <span class="glyphicon glyphicon-remove" style="cursor: pointer"
+                                  ng-click="deleteExp(info.id)">
+                            </span>
+                    </span>
+                    <div>
+                        <p>开始时间: {{info.start_time}}</p>
+                        <p>结束时间: {{info.end_time}}</p>
+                        <p>所在公司: {{info.company}}</p>
+                        <p>职<span style="margin: 14px"></span>位: {{info.position}}</p>
+                        <p>部<span style="margin: 14px"></span>门: {{info.department}}</p>
+                        <p>执业编号: {{info.license_number}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--新增工作北京 开始-->
+        <form role="form">
+            <div class="modal fade text-left" id="addExp" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>新增工作背景</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>开始时间</label>
+                                <input type="date" class="form-control" ng-model="start_time "/>
+                            </div>
+                            <div class="form-group">
+                                <label>结束时间</label>
+                                <input type="date" class="form-control" ng-model="end_time "/>
+                            </div>
+                            <div class="form-group">
+                                <label>所在公司/单位</label>
+                                <input type="text" class="form-control" ng-model="company"/>
+                            </div>
+                            <div class="form-group">
+                                <label>职位</label>
+                                <input type="text" class="form-control" ng-model="position"/>
+                            </div>
+                            <div class="form-group">
+                                <label>部门</label>
+                                <input class="form-control" ng-model="department"/>
+                            </div>
+                            <div class="form-group">
+                                <label>执业证号</label>
+                                <input class="form-control" ng-model="license_number"/>
+                            </div>
+                            <button class="btn btn-info" ng-click="addExp(info.id)">新增</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--新增工作北京 结束-->
+
+        <!--修改工作北京 开始-->
+        <form role="form">
+            <div class="modal fade text-left" id="editExp" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>修改工作背景</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>开始时间</label>
+                                <input type="text" class="form-control" ng-model="start_time "/>
+                            </div>
+                            <div class="form-group">
+                                <label>结束时间</label>
+                                <input type="text" class="form-control" ng-model="end_time "/>
+                            </div>
+                            <div class="form-group">
+                                <label>所在公司/单位</label>
+                                <input type="text" class="form-control" ng-model="company"/>
+                            </div>
+                            <div class="form-group">
+                                <label>职位</label>
+                                <input type="text" class="form-control" ng-model="position"/>
+                            </div>
+                            <div class="form-group">
+                                <label>部门</label>
+                                <input class="form-control" ng-model="department"/>
+                            </div>
+                            <div class="form-group">
+                                <label>执业证号</label>
+                                <input class="form-control" ng-model="license_number"/>
+                            </div>
+                            <button class="btn btn-info" ng-click="editExp()">修改</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--修改工作北京 结束-->
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p style="font-size: 20px; margin-top: 20px;">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    代表业绩
+                </p>
+                <p class="text-right">
+                    <span class="glyphicon glyphicon-plus" data-toggle="modal" style="cursor: pointer"
+                          data-target="#addRep">
+                    </span>
+                </p>
+                <div ng-repeat="info in lawyer_rep" style="border-bottom: 1px dotted #aaa; padding: 10px 0px">
+                    <span class="pull-right">
+                        <span class="glyphicon glyphicon-edit sessionEdit" style="cursor: pointer"
+                              data-toggle="modal"
+                              data-target="#editRep" ng-click="sessionID(info.id, info.time, info.content)">
+                        </span>
+                        <span class="glyphicon glyphicon-remove" ng-click="deleteRep(info.id)" style="cursor: pointer">
+                        </span>
+                    </span>
+                    <div>
+                        <p>日期: {{info.time}}</p>
+                        <p>内容: {{info.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--修改代表业绩 开始-->
+        <form role="form">
+            <div class="modal fade text-left" id="editRep" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>修改代表业绩</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>日期</label>
+                                <!--因为date空间无法赋值-->
+                                <input type="text" class="form-control" ng-model="time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>内容</label>
+                                <textarea placeholder="请输入内容..." ng-model="content" class="form-control"
+                                          style="width: 100%; height: 100px; font-size: 14px; line-height: 14px; border: 1px solid #aaa">{{sessionid}}</textarea>
+                            </div>
+                            <button class="btn btn-info" ng-click="editRep()">修改</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--修改代表业绩 结束-->
+
+        <!--添加代表业绩 开始-->
+        <form role="form">
+            <div class="modal fade text-left" id="addRep" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <button type="button" class="close"
+                                        data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4>添加代表业绩</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>日期</label>
+                                <input type="date" class="form-control" ng-model="time"/>
+                            </div>
+                            <div class="form-group">
+                                <label>内容</label>
+                                <textarea placeholder="请输入内容..." ng-model="content" class="form-control"
+                                          style="width: 100%; height: 100px; font-size: 14px; line-height: 14px; border: 1px solid #aaa"></textarea>
+                            </div>
+                            <button class="btn btn-info" ng-click="addRep()">添加</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--添加代表业绩 结束-->
+    </div>
+</section>
+<script>
+    $(function () {
+        $('.textarea').wysihtml5({locale: "zh-CN"});
+        // 添加代表业绩
+        var y = 0;
+        $("#achievement").click(function () {
+            $(".achievement").append(
+                    '<div class="panel" id="ach' + y + '">' +
+                    "<div class='panel-body achievementString'>" +
+                    "<img src='../dist/img/close.png' class='remove pull-right'/>" +
+                    "<div class='form-group'>" +
+                    "<label>日期</label>" +
+                    "<input type='date' class='form-control time' ng-model='time'/>" +
+                    "<div class='form-group'>" +
+                    "<label>内容</label>" +
+                    "<textarea class='achContent form-control content' rows='3' ng-model='content'></textarea>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+            );
+            y++;
+        });
+        // 添加互动
+        var hd = 0;
+        $("#instract").click(function () {
+            $(".instract").append(
+                    '<div class="panel" id="ins' + hd + '">' +
+                    "<div class='panel-body achievementString'>" +
+                    "<img src='../dist/img/close.png' class='remove pull-right'/>" +
+                    "<div class='form-group'>" +
+                    '<label>互动形式</label>' +
+                    '<select class="form-control form" ng-model="form">' +
+                    '<option selected="selected" value="1">电话</option>' +
+                    '<option value="2">信息(短信或者微信)</option>' +
+                    '<option value="3">会面</option>' +
+                    '</select>' +
+                    '<div class="form-group">' +
+                    '<label>互动详情</label>' +
+                    '<textarea class="form-control details" placeholder="互动详情"></textarea>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>互动时间</label>' +
+                    '<input type="date" class="form-control time" value=""/>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>点评</label>' +
+                    '<textarea class="form-control comment" placeholder="请输入点评信息"></textarea>' +
+                    '</div>' +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+            );
+            hd++;
+        });
+        // 擅长领域二级联动
+        var practice_areas;
+        $("#linkage").change(function () {
+            if ($("#linkage option:selected").val() == "1") {
+                $(".child select").hide();
+                $(".oneChild").show();
+                $(".oneChild").change(function () {
+                    practice_areas = "民事类##" + $(".oneChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "2") {
+                $(".child select").hide();
+                $(".twoChild").show();
+                $(".twoChild").change(function () {
+                    practice_areas = "刑事##" + $(".twoChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "3") {
+                $(".child select").hide();
+                $(".threeChild").show();
+                $(".threeChild").change(function () {
+                    practice_areas = "行政##" + $(".threeChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "4") {
+                $(".child select").hide();
+                $(".fourChild").show();
+                $(".fourChild").change(function () {
+                    practice_areas = "知识产权/竞争##" + $(".fourChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "5") {
+                $(".child select").hide();
+                $(".fiveChild").show();
+                $(".fiveChild").change(function () {
+                    practice_areas = "国家赔偿##" + $(".fiveChild option:selected").val();
+                });
+            }
+            else {
+                $(".child select").hide();
+            }
+        });
+        // 团队管理律师姓名框贴换
+        var team_type = 1;
+        $(".leadLawyer input").change(function () {
+            if ($(".team").prop("checked") == true) {
+                $(".boss").show();
+            }
+            if ($(".noteam").prop("checked") == true) {
+                $(".boss").hide();
+            }
+        });
+        // 添加社会职务,添加动态的class
+        var sh = 0;
+        $(document).on("click", ".addPost", function () {
+//        $(".addPost").click(function () {
+            sh++;
+            $(".addPt").append(
+                    '<div class="row">' +
+                    '<div class="col-sm-11 col-xs-10 postInput">' +
+                    '<p>' +
+                    '<input type="text" placeholder="社会职务" class="form-control social_functions' + sh + '" ng-model="social_functions"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="col-sm-1 col-xs-2">' +
+                    '<label class="glyphicon glyphicon-remove removePost" style="cursor: pointer; margin-top: 8px;"></label>' +
+                    '</div>' +
+                    '</div>'
+            )
+        });
+
+        // 删除社会职务
+        $(document).on("click", ".removePost", function () {
+            $(this).parent().parent().find("div").remove();
+        });
+
+//        // 添加教育信息
+//        var n = 0;
+//        $(".addEdu").click(function () {
+//            n++;
+//            $(".showEdu").append(
+//                    '<div class="well edu' + n + '">' +
+//                    '<p class="pull-right glyphicon glyphicon-remove removeEdu" style="cursor: pointer"></p>' +
+//                    '<p>' +
+//                    '<input type="date" placeholder="开始时间" class="form-control start_time" ng-model="start_time"/>' +
+//                    '</p>' +
+//                    '<p>' +
+//                    '<input type="date" placeholder="结束时间" class="form-control end_time" ng-model="end_time" />' +
+//                    '</p>' +
+//                    '<p>' +
+//                    '<input type="text" placeholder="毕业学校" class="form-control school" ng-model="school"/>' +
+//                    '</p>' +
+//                    '<p>' +
+//                    '<input type="text" placeholder="专业" class="form-control major" ng-model="major" />' +
+//                    '</p>' +
+//                    '<p>' +
+//                    '<input type="text" placeholder="学位" class="form-control academic_degree" ng-model="academic_degree" />' +
+//                    '</p>' +
+//                    '<p>' +
+//                    '<select class="form-control academic_degree" ng-model="academic_degree">' +
+//                    '<option value="学士">学士</option>' +
+//                    '<option value="硕士">硕士</option>' +
+//                    '<option value="博士">博士</option>' +
+//                    '</select>' +
+//                    '</p>' +
+//                    '</div>'
+//            )
+//        });
+//        // 移除教育经历
+//        $(document).on("click", ".removeEdu", function () {
+//            $(this).parent().remove();
+//        });
+
+
+        // 添加履历
+        var m = 0;
+        $(".addPos").click(function () {
+            m++;
+            $(".yourPosition").append(
+                    '<div class="well addChild' + m + '">' +
+                    '<p class="pull-right glyphicon glyphicon-remove removeEdu" style="cursor: pointer"></p>' +
+                    '<p>' +
+                    '<select class="form-control postInfo postInfo' + m + '">' +
+                    '<option value="">职业经历</option>' +
+                    '<option value="1">律师</option>' +
+                    '<option value="2">法官</option>' +
+                    '<option value="3">检察官</option>' +
+                    '<option value="4">警察</option>' +
+                    '<option value="5">其它行政机关工作人员' +
+                    '</option>' +
+                    '<option value="6">公司法务</option>' +
+                    '<option value="7">仲裁员</option>' +
+                    '<option value="8">大学教师</option>' +
+                    '</select>' +
+                    '</p>' +
+                    '<div class="valueAll">' +
+                    '<div class="value1">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<select class="form-control lawyerType">' +
+                    '<option value="1">助理律师</option>' +
+                    '<option value="2">主办律师</option>' +
+                    '<option value="3">合伙人</option>' +
+                    '</select>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control lawyerNum" placeholder="执业证号"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value2">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value3">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value4">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value5">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value6">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职公司全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control lawyerNum" placeholder="执业证号"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value7">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="仲裁机构全称"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value8">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control schoolName" placeholder="学校全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control major" placeholder="专业"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+            );
+        });
+
+        // 职务信息选择框
+        var lawyer_experience = "";
+        $(document).on("change", ".postInfo", function () {
+            if ($(this).find("option:selected").val() == "1") {
+                $(this).parent().parent().find(".value1").show();
+                $(this).parent().parent().find(".value1").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "2") {
+                $(this).parent().parent().find(".value2").show();
+                $(this).parent().parent().find(".value2").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "3") {
+                $(this).parent().parent().find(".value3").show();
+                $(this).parent().parent().find(".value3").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "4") {
+                $(this).parent().parent().find(".value4").show();
+                $(this).parent().parent().find(".value4").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "5") {
+                $(this).parent().parent().find(".value5").show();
+                $(this).parent().parent().find(".value5").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "6") {
+                $(this).parent().parent().find(".value6").show();
+                $(this).parent().parent().find(".value6").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "7") {
+                $(this).parent().parent().find(".value7").show();
+                $(this).parent().parent().find(".value7").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "8") {
+                $(this).parent().parent().find(".value8").show();
+                $(this).parent().parent().find(".value8").siblings().hide();
+            }
+            else {
+                $(this).parent().parent().find(".value1, .value2, .value3, .value4, .value5, .value6, .value7, .value8").hide();
+            }
+        });
+
+
+        // 删除添加
+        $(document).on("click", ".remove", function () {
+            $(this).parent().parent().remove();
+        });
+
+        // 验证姓名
+        $(".name").blur(function () {
+            if ($(this).val() == "") {
+                $("#name").show();
+            }
+            else {
+                $("#name").hide();
+            }
+        });
+        // 律所
+        $(".firm").blur(function () {
+            if ($(this).val() == "") {
+                $("#firm").show();
+            }
+            else {
+                $("#firm").hide();
+            }
+        });
+        // 所在城市
+        $(".city").blur(function () {
+            if ($(this).val() == "") {
+                $("#city").show();
+            }
+            else {
+                $("#city").hide();
+            }
+        });
+        // 验证手机号码
+        $(".phone").blur(function () {
+            if (!(/^1\d{10}$/.test($(this).val()))) {
+                $("#phone").show();
+            }
+            else {
+                $("#phone").hide();
+            }
+            // 验证数据库手机是否重复
+            $.ajax({
+                type: "get",
+                data: {phone: $(".phone").val()},
+                url: url + "lawyer/check_phone",
+                success: function (data) {
+                    console.log(data);
+                    $("#phone").show();
+                    $("#phone").text(data.message);
+                }
+            })
+        });
+        $("#sub").click(function () {
+            var name = $(".name").val();
+            var phone = $(".phone").val();
+            var sex = $(".sex option:selected").val();
+            var email = $(".email").val();
+            var firm = $(".firm").val();
+            var position = $(".position").val();
+            var tel = $(".tel").val();
+            var country = $(".country").val();
+            var province = $(".province").val();
+            var city = $(".city").val();
+            var address = $(".address").val();
+            var wechat = $(".wechat").val();
+            var hometown = $(".hometown").val();
+            var major = $(".mymajor option:selected").val();
+            var court_level = $(".court_level").val();
+            var business_court = $(".business_court").val();
+            var type = $(".type").val();
+            var cooperate = $(".cooperate").val();
+            var cooperate_suc = $(".cooperate_suc").val();
+            var exclusive = $(".exclusive").val();
+            var personality = $(".personality").val();
+            var synopsis = $(".synopsis").val();
+            // 律所类型
+            var firm_type = $(".firm_type input[type='radio']:checked").val();
+
+            if (name == "" || phone == "" || practice_areas == "" || firm_type == "" || major == "" || firm == "") {
+                alert("带星号的为必填字段");
+            }
+            else {
+                // 业绩字符串
+                var lawyer_rep = "";
+                for (var d = 0; d < y; d++) {
+                    if ($("#ach" + d + " .time").val() == "" || $("#ach" + d + " .content").val() == "") {
+                        $("#ach" + d + " .time").val("1970-10-01");
+                        $("#ach" + d + " .content").val("暂无");
+                    }
+                    lawyer_rep += $("#ach" + d + " .time").val() + "##" + $("#ach" + d + " .content").val() + "@@";
+                }
+                // 互动字符串
+                var lawyer_interact = "";
+                for (var j = 0; j < hd; j++) {
+                    if ($("#ins" + j + " .form").val() == "" || $("#ins" + j + " .details").val() == "" || $("#ins" + j + " .time").val() == "" || $("#ins" + j + " .comment").val() == "") {
+                        $("#ins" + j + " .form").val("暂无");
+                        $("#ins" + j + " .details").val("暂无");
+                        $("#ins" + j + " .time").val("1970-10-01");
+                        $("#ins" + j + " .comment").val("暂无");
+                    }
+                    lawyer_interact += $("#ins" + j + " .form").val() + "##" + $("#ins" + j + " .details").val() + "##" + $("#ins" + j + " .comment").val() + "##" + $("#ins" + j + " .time").val() + "@@";
+                }
+
+                // 非/团队管理律所
+                if ($(".team").prop("checked") == true) {
+                    team_type = $(".boss input").val();
+                }
+                else {
+                    team_type = 1;
+                }
+
+                var remark = $(".remark").val();
+                // 获取社会职务,拼接字符串
+                var social_functions = "";
+                var slength = $(".social_functions").length - 1;
+                for (var ss = 0; ss < slength; ss++) {
+                    social_functions += $(".social_functions").eq(ss).val() + "##";
+                }
+//                // 获取教育经历 拼接字符串
+//                var lawyer_education = "";
+//                for (var g = 1; g <= n; g++) {
+//                    lawyer_education += $(".edu" + g + " .start_time").val() + "##" + $(".edu" + g + " .end_time").val() + "##" + $(".edu" + g + " .school").val() + "##" + $(".edu" + g + " .major").val() + "##" + $(".edu" + g + " .academic_degree option:selected").val() + "@@";
+//                }
+
+                // 职业经历
+                for (var h = 1; h <= m; h++) {
+                    if ($(".postInfo" + h).find("option:selected").val() == "1") {
+                        lawyer_experience += $(".addChild" + h + " .value1 .start_time").val() + "##" + $(".addChild" + h + " .value1 .end_time").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value1 .lawyerNum").val() + "##" + $(".addChild" + h + " .value1 .lawyerType option:selected").text() + "##" + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "2") {
+                        lawyer_experience += $(".addChild" + h + " .value2 .start_time").val() + "##" + $(".addChild" + h + " .value2 .end_time").val() + "##" + $(".addChild" + h + " .value2 .firmName").val() + "##" + $(".addChild" + h + " .value2 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value2 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "3") {
+                        lawyer_experience += $(".addChild" + h + " .value3 .start_time").val() + "##" + $(".addChild" + h + " .value3 .end_time").val() + "##" + $(".addChild" + h + " .value3 .firmName").val() + "##" + $(".addChild" + h + " .value3 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value3 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "4") {
+                        lawyer_experience += $(".addChild" + h + " .value4 .start_time").val() + "##" + $(".addChild" + h + " .value4 .end_time").val() + "##" + $(".addChild" + h + " .value4 .firmName").val() + "##" + $(".addChild" + h + " .value4 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value4 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "5") {
+                        lawyer_experience += $(".addChild" + h + " .value5 .start_time").val() + "##" + $(".addChild" + h + " .value5 .end_time").val() + "##" + $(".addChild" + h + " .value5 .firmName").val() + "##" + $(".addChild" + h + " .value5 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value5 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "6") {
+                        lawyer_experience += $(".addChild" + h + " .value6 .start_time").val() + "##" + $(".addChild" + h + " .value6 .end_time").val() + "##" + $(".addChild" + h + " .value6 .firmName").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value6 .lawyerNum").val() + $(".addChild" + h + " .value6 .position").val() + "##" + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "7") {
+                        lawyer_experience += $(".addChild" + h + " .value7 .start_time").val() + "##" + $(".addChild" + h + " .value7 .end_time").val() + "##" + $(".addChild" + h + " .value7 .firmName").val() + "##" + " ##" + " ##" + " ## " + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "8") {
+                        lawyer_experience += $(".addChild" + h + " .value8 .start_time").val() + "##" + $(".addChild" + h + " .value8 .end_time").val() + "##" + $(".addChild" + h + " .value8 .schoolName").val() + "##" + $(".addChild" + h + " .value8 .major").val() + "##" + " ## " + " ##" + $(".addChild" + h + " .value8 .position").val() + "@@";
+                    }
+                }
+
+                var data = {
+                    uid: sessionStorage.getItem("id"),
+                    lid: $(".lawyerId").text(),
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    sex: sex,
+                    firm: firm,
+                    position: position,
+                    tel: tel,
+                    country: country,
+                    province: province,
+                    city: city,
+                    address: address,
+                    wechat: wechat,
+                    hometown: hometown,
+                    major: major,
+                    court_level: court_level,
+                    business_court: business_court,
+                    type: type,
+                    exclusive: exclusive,
+                    personality: personality,
+                    synopsis: synopsis,
+
+                    // 新加字段
+                    firm_type: firm_type,
+                    practice_areas: practice_areas,
+                    team_type: team_type,
+//                    lawyer_edu: lawyer_education,
+//                    lawyer_exp: lawyer_experience,
+                    social_functions: social_functions,
+                    remark: remark,
+                    info: ""
+                };
+                console.log(data);
+                if (confirm("您确定修改吗?")) {
+                    $.ajax({
+                        type: "post",
+                        data: data,
+                        dataType: "json",
+                        url: url + "lawyer/lawyere",
+                        success: function (data) {
+                            console.log(data);
+                            window.location.reload();
+                        }
+                    });
+                }
+                else {
+
+                }
+            }
+            console.log(data);
+        })
+    })
+</script>

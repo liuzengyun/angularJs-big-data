@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered text-center">
+                    <caption>市场人员列表</caption>
+                    <thead>
+                    <tr class="info">
+                        <th>市场人员姓名</th>
+                        <th>客户数</th>
+                        <th>新增客户数(一周内)</th>
+                        <th>与客户互动数(一周内)</th>
+                        <th>新增客户数(一个月内)</th>
+                        <th>与客户互动数(一个月内)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="info in infos">
+                        <td>{{info.name}}</td>
+                        <td><a href="#/total/{{info.mid}}" class="label label-primary">{{info.total}}</a></td>
+                        <td><a href="#/addWeek/{{info.mid}}" class="label label-primary">{{info.week_add}}</a></td>
+                        <td><a href="#/interactWeek/{{info.mid}}" class="label label-primary">{{info.week_interact}}</a>
+                        </td>
+                        <td><a href="#/addMonth/{{info.mid}}" class="label label-primary">{{info.month_num}}</a></td>
+                        <td><a href="#/interactMonth/{{info.mid}}"
+                               class="label label-primary">{{info.month_interact}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

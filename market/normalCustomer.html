@@ -1,0 +1,101 @@
+<section class="content">
+    <div class="row">
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <input type="input" class="form-control" ng-model="name" placeholder="客户名字"/>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <select class="form-control industry" ng-model="industry">
+                    <option value="" selected="selected">行业</option>
+                    <option value="1">类金融机构</option>
+                    <option value="2">企业类</option>
+                    <option value="3">商协会</option>
+                    <option value="4">法律</option>
+                    <option value="5">媒体</option>
+                    <option value="6">学者官员</option>
+                    <option value="7">其他</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <input type="input" class="form-control" placeholder="省份" ng-model="province"/>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <input type="input" class="form-control" placeholder="城市" ng-model="city"/>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6 pull-right text-right">
+            <button class="btn btn-primary btn-sm" ng-click="searchClient()">点击搜索</button>
+        </div>
+    </div>
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="container">
+            <div class="no_info" style="display: none;">
+                暂无信息
+            </div>
+        </div>
+        <!-- /.row -->
+        <!--有数据以后就循环这个就好了-->
+        <div class="col-lg-4 col-xs-6" ng-repeat="info in result">
+            <div class="box box-solid bg-light-blue-gradient">
+                <div class="box-header {{hideClass}}">
+                    <div class="pull-right box-tools">
+                        <!--单击传递lid-->
+                        <i class="glyphicon glyphicon-remove" ng-click="deleteCustomer(info.cid)"
+                           style="cursor: pointer;"></i>
+                    </div>
+                </div>
+                <a href="#/customerInfo/{{info.cid}}">
+                    <div class="box-body border-radius-none">
+
+                        <div class="small-box">
+                            <div class="inner">
+                                <p class="borderBottom"><span style="font-size: 20px;">{{info.name}}</span></p>
+                                <p style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"><span class="glyphicon glyphicon-home"></span> {{info.firm}}</p>
+                                <p><span class="glyphicon glyphicon-phone"></span> {{info.phone}} </p>
+                            </div>
+                            <div class="icon" style="top: 0px">
+                                <!--这里使用angularjs的表达式判断-->
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ul id="page">
+            <li>
+                <a ng-click="pageClick(pre)">
+                    上一页
+                </a>
+            </li>
+            <li ng-repeat="pageInfo in arr">
+                <a ng-click="pageClick(pageInfo)">{{pageInfo==0 ? pageInfo='首页': pageInfo}}</a>
+            </li>
+            <!--<li>-->
+                <!--<a ng-click="pageClick(page)">-->
+                    <!--末页-->
+                <!--</a>-->
+            <!--</li>-->
+            <li>
+                <a ng-click="pageClick(current)">
+                    下一页
+                </a>
+            </li>
+            <li>
+                当前页:<span style="color: red">{{current > 1 ? current-1 : 1}}</span>
+            </li>
+            <li>
+                <span>总条数: {{rows}}</span>
+            </li>
+        </ul>
+    </div>
+</section>

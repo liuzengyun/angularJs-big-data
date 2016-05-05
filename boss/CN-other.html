@@ -1,0 +1,58 @@
+<div class="row">
+    <h4 class="titleLawyer">地域分布</h4>
+    <div class="col-sm-6 col-sm-offset-2 col-xs-6 col-xs-offset-2">
+        <div class="itemCon">
+            <div id="Region">
+                <div class="regionMap" id="RegionMap"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-6">
+        <div class="rightMsg" style="overflow: hidden; padding-top: 10px;">
+            <table width="100" class="table table-responsive">
+                <tr>
+                    <td>
+                        序号
+                    </td>
+                    <td>
+                        地区
+                    </td>
+                    <td width="50">
+                        比例
+                    </td>
+                    <td>
+                        人数
+                    </td>
+                </tr>
+                <tr ng-repeat="info in zw | orderBy:'-value'" id={{"tr"+$index}}>
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        {{info.province}}
+                    </td>
+                    <td>
+                        <div class="progress progress-striped" id={{"pro"+$index}} style="{{'width:'+(info.value/total)*100+'%'}}">
+
+                        </div>
+                    </td>
+                    <td>
+                        {{info.value}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <h4 class="titleLawyer">院级分布</h4>
+    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+        <div id="container" style="margin: 0 auto"></div>
+    </div>
+</div>
+<div class="row">
+    <h4 class="titleLawyer">业务庭分布</h4>
+    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+        <div id="container-two" style="margin: 0 auto"></div>
+    </div>
+</div>

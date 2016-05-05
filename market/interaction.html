@@ -1,0 +1,31 @@
+<div class="content">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12" ng-repeat="info in result">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">客户名: {{info.client_name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            互动时间: {{info.time}}
+                        </li>
+                        <li>
+                            互动方式: {{info.form}}
+                        </li>
+                        <li>
+                            互动详情: {{info.details}}
+                        </li>
+                        <li>
+                            总<span style="margin: 0px 14px"></span>结:
+                            <p>{{info.comment}}</p>
+                        </li>
+                        <li>
+                            下一步计划: {{info.next_plan}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

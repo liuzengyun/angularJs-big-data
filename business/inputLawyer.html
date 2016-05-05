@@ -1,0 +1,894 @@
+<div class="content">
+    <div>
+        <div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+
+
+                    <form role="form">
+                        <div class="form-group">
+                            <label>姓名<span style="color: red">*</span></label><span id="name">姓名不能为空</span>
+                            <input type="text" class="form-control name" ng-model="lawyer.name" style="display: block">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号<span style="color: red">*</span></label><span id="phone">手机号码不能为空</span>
+                            <input type="text" class="form-control phone" ng-model="lawyer.phone"
+                                   style="display: block">
+                        </div>
+                        <div class="form-group">
+                            <label>性别</label>
+                            <select class="form-control sex" ng-model="lawyer.sex">
+                                <option value="" selected="selected">请选择性别</option>
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>邮箱</label>
+                            <input type="text" class="form-control email" ng-model="lawyer.email">
+                        </div>
+                        <div class="form-group">
+                            <label>律所<span style="color: red">*</span></label><span id="firm">律所不能为空</span>
+                            <input type="text" class="form-control firm" ng-model="lawyer.firm" style="display: block">
+                        </div>
+                        <div class="form-group">
+                            <label>职位</label>
+                            <input type="text" class="form-control position" ng-model="lawyer.position">
+                        </div>
+                        <div class="form-group">
+                            <label>座机</label>
+                            <input type="text" class="form-control tel" ng-model="lawyer.tel">
+                        </div>
+                        <div class="form-group">
+                            <label>国家<span style="color: red">*</span></label>
+                            <input type="text" class="form-control country" ng-model="lawyer.country">
+                        </div>
+                        <div class="form-group">
+                            <label>省份<span style="color: red">*</span></label>
+                            <p>
+                                <select name="P1" class="form-control province" ng-model="lawyer.province"></select>
+                            </p>
+                            <!--<input type="text" class="form-control province" ng-model="lawyer.province">-->
+                        </div>
+                        <div class="form-group">
+                            <label>城市</label>
+                            <select name="C1" class="form-control city" ng-model="lawyer.city"></select>
+                            <!--<input type="text" class="form-control city" ng-model="lawyer.city" style="display: block">-->
+                        </div>
+                        <div class="form-group">
+                            <label>地址</label>
+                            <input type="text" class="form-control address" ng-model="lawyer.address">
+                        </div>
+                        <div class="form-group">
+                            <label>微信号</label>
+                            <input type="text" class="form-control wechat" ng-model="lawyer.wechat">
+                        </div>
+                        <div class="form-group">
+                            <label>故乡</label>
+                            <input type="text" class="form-control hometown" ng-model="lawyer.hometown">
+                        </div>
+                        <div class="form-group">
+                            <label>专业<span style="color: red">*</span></label>
+                            <select class="form-control mymajor" ng-model="lawyer.major">
+                                <option value="1">民事</option>
+                                <option value="2">商事</option>
+                                <option value="3">知识产权</option>
+                                <option value="4">涉外</option>
+                                <option value="5">刑事</option>
+                                <option value="6">行政</option>
+                                <option value="7">环保</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>原业务庭室</label>
+                            <select class="form-control court_level" ng-model="lawyer.business_court">
+                                <option value="" selected="selected">如果不是离职法官请不要填写此项</option>
+                                <option value="0">没有</option>
+                                <option value="1">民事</option>
+                                <option value="2">商事</option>
+                                <option value="3">知识产权</option>
+                                <option value="4">涉外</option>
+                                <option value="5">刑事</option>
+                                <option value="6">行政</option>
+                                <option value="7">环保</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>原执业法院级别</label>
+                            <select class="form-control business_court" ng-model="lawyer.court_level">
+                                <option value="" selected="selected">如果不是离职法官请不要填写此项</option>
+                                <option value="0">没有</option>
+                                <option value="1">最高院</option>
+                                <option value="2">高院</option>
+                                <option value="3">中院</option>
+                                <option value="4">基层法院</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>律师类型<span style="color: red">*</span></label>
+                            <select class="form-control type" ng-model="lawyer.type">
+                                <option value="1">普通律师</option>
+                                <option value="2">资深律师</option>
+                                <option value="3">离职法官律师</option>
+                                <option value="4">次重要律师</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>专属信息</label>
+                            <input type="text" class="form-control exclusive" ng-model="lawyer.exclusive">
+                        </div>
+                        <div class="form-group">
+                            <label>性格特点</label>
+                            <input type="text" class="form-control personality" ng-model="lawyer.personality">
+                        </div>
+                        <div class="form-group">
+                            <label>个人简介</label>
+                            <input type="text" class="form-control synopsis" ng-model="lawyer.synopsis">
+                        </div>
+                        <div class="form-group">
+                            <label>律所类型</label><span style="color: red; margin-top: 8px;">*</span>
+                            <p class="firm_type">
+                                <input type="radio" name="firm" value="1"/> 总部 &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="firm" value="2"/> 分所
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label>擅长领域</label><span style="color: red; margin-top: 8px;">*</span>
+                            <p>
+                                <select class="form-control" id="linkage">
+                                    <option value="" selected="selected">请选择擅长领域</option>
+                                    <option value="1" class="one">民商事</option>
+                                    <option value="2" class="two">刑事</option>
+                                    <option value="3" class="three">行政</option>
+                                    <option value="4" class="four">知识产权/竞争</option>
+                                    <option value="5" class="five">国家赔偿</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="child">
+                            <p>
+                                <select class="form-control oneChild">
+                                    <option value="" selected="selected">请选择擅长领域</option>
+                                    <option>物权</option>
+                                    <option>合同债权</option>
+                                    <option>侵权责任</option>
+                                    <option>婚姻家庭/亲属继承</option>
+                                    <option>公司股权</option>
+                                    <option>股东权利与义务/高管权利与义务</option>
+                                    <option>证券/票据</option>
+                                    <option>保险</option>
+                                    <option>海事海商</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="form-control twoChild">
+                                    <option value="" selected="selected">请选择擅长领域</option>
+                                    <option>危害国家安全/危害公共安全</option>
+                                    <option>破坏市场经济秩序</option>
+                                    <option>侵犯公民人身权利民主权利</option>
+                                    <option>侵犯财产</option>
+                                    <option>妨害社会管理秩序/危害国防利益</option>
+                                    <option>贪污贿赂/渎职</option>
+                                    <option>军人违反职责</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="form-control threeChild">
+                                    <option value="" selected="selected">请选择擅长领域</option>
+                                    <option>行政作为/行政不作为</option>
+                                    <option>行政行为</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="form-control fourChild">
+                                    <option value="" selected="selected">请选择擅长领域</option>
+                                    <option>商标</option>
+                                    <option>专利</option>
+                                    <option>著作权</option>
+                                    <option>反垄断</option>
+                                    <option>反不正当竞争</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="form-control fiveChild">
+                                    <option value="行政赔偿">行政赔偿</option>
+                                    <option value="司法赔偿">司法赔偿</option>
+                                </select>
+                            </p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-11 col-xs-11">
+                                <p class="leadLawyer team_type">
+                                    <input type="radio" name="team" class="team"/> 非团队管理律师 &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="team" class="noteam"/> 团队管理律师
+                                </p>
+                            </div>
+                            <div class="col-sm-1 col-xs-1">
+                                <p>
+                                    <span class="pull-right" style="color: red;">*</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-11 col-xs-11">
+                                <p class="boss">
+                                    <input type="text" class="form-control lawyer_name" placeholder="团队管理律师姓名"/>
+                                </p>
+                            </div>
+                            <div class="col-sm-1 col-xs-1">
+                                <p class="bossRed" style="display: none;">
+                                    <span class="pull-right" style="color: red; margin-top: 8px;">*</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="from-group">
+                            <label>备注</label>
+                            <p>
+                                <textarea class="remark form-control"></textarea>
+                            </p>
+                        </div>
+                        <label>社会职务</label>
+                        <div class="addPt">
+
+                        </div>
+                        <p>
+                            <button class="btn btn-default btn-block addPost">+点击添加一条社会职务</button>
+                        </p>
+                        <!--// 职业经历-->
+                        <div class="form-group">
+                            <label>职业经历</label>
+                            <div class="yourPosition">
+                            </div>
+                            <button class="btn btn-block btn-default addPos">+点击添加一条职业经历</button>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label>教育背景</label>
+                            <div class="showEdu">
+
+                            </div>
+                            <button class="btn btn-block btn-default addEdu">+点击添加一条教育信息</button>
+                            <!--<input class="form-control" id="education" />-->
+                        </div>
+                        <div class="form-group">
+                            <label>代表业绩</label>
+                            <div class="achievement">
+
+                            </div>
+                            <!--<input class="form-control" id="achievement" />-->
+                        </div>
+                        <p>
+                            <input type="button" value="+点击添加一个代表业绩" class="btn btn-default btn-block"
+                                   id="achievement"/>
+                        </p>
+                        <div class="form-group">
+                            <label>互动信息</label>
+                            <div class="instract">
+
+                            </div>
+                            <!--<input class="form-control" id="achievement" />-->
+                        </div>
+                        <p>
+                            <input type="button" value="+点击添加一条互动信息" class="btn btn-default btn-block"
+                                   id="instract"/>
+                        </p>
+                        <p>
+                            <input type="button" value="提交" class="btn btn-success" id="sub"/>
+                        </p>
+                        <br/>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../dist/js/PCASClass.js"></script>
+<script>
+    new PCAS("P1", "C1");
+    $(function () {
+        // 添加代表业绩
+        var y = 0;
+        $("#achievement").click(function () {
+            $(".achievement").append(
+                    '<div class="panel" id="ach' + y + '">' +
+                    "<div class='panel-body achievementString'>" +
+                    "<img src='../dist/img/close.png' class='remove pull-right'/>" +
+                    "<div class='form-group'>" +
+                    "<label>日期</label>" +
+                    "<input type='date' class='form-control time' ng-model='time'/>" +
+                    "<div class='form-group'>" +
+                    "<label>内容</label>" +
+                    "<textarea class='achContent form-control content' rows='3' ng-model='content'></textarea>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+            );
+            y++;
+        });
+        // 添加互动
+        var hd = 0;
+        $("#instract").click(function () {
+            $(".instract").append(
+                    '<div class="panel" id="ins' + hd + '">' +
+                    "<div class='panel-body achievementString'>" +
+                    "<img src='../dist/img/close.png' class='remove pull-right'/>" +
+                    "<div class='form-group'>" +
+                    '<label>互动形式</label>' +
+                    '<select class="form-control form" ng-model="form">' +
+                    '<option selected="selected" value="1">电话</option>' +
+                    '<option value="2">信息(短信或者微信)</option>' +
+                    '<option value="3">会面</option>' +
+                    '</select>' +
+                    '<div class="form-group">' +
+                    '<label>互动详情</label>' +
+                    '<textarea class="form-control details" placeholder="互动详情"></textarea>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>互动时间</label>' +
+                    '<input type="date" class="form-control time" value=""/>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>点评</label>' +
+                    '<textarea class="form-control comment" placeholder="请输入点评信息"></textarea>' +
+                    '</div>' +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+            );
+            hd++;
+        });
+        // 擅长领域二级联动
+        var practice_areas;
+        $("#linkage").change(function () {
+            if ($("#linkage option:selected").val() == "1") {
+                $(".child select").hide();
+                $(".oneChild").show();
+                $(".oneChild").change(function () {
+                    practice_areas = "民事类##" + $(".oneChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "2") {
+                $(".child select").hide();
+                $(".twoChild").show();
+                $(".twoChild").change(function () {
+                    practice_areas = "刑事##" + $(".twoChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "3") {
+                $(".child select").hide();
+                $(".threeChild").show();
+                $(".threeChild").change(function () {
+                    practice_areas = "行政##" + $(".threeChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "4") {
+                $(".child select").hide();
+                $(".fourChild").show();
+                $(".fourChild").change(function () {
+                    practice_areas = "知识产权/竞争##" + $(".fourChild option:selected").val();
+                });
+            }
+            else if ($("#linkage option:selected").val() == "5") {
+                $(".child select").hide();
+                $(".fiveChild").show();
+                $(".fiveChild").change(function () {
+                    practice_areas = "国家赔偿##" + $(".fiveChild option:selected").val();
+                });
+            }
+            else {
+                $(".child select").hide();
+            }
+        });
+        // 团队管理律师姓名框贴换
+        var team_type = 1;
+        $(".leadLawyer input").change(function () {
+            if ($(".team").prop("checked") == true) {
+                $(".boss").show();
+                $(".bossRed").show();
+            }
+            if ($(".noteam").prop("checked") == true) {
+                $(".boss").hide();
+                $(".bossRed").hide();
+            }
+        });
+        // 添加社会职务,添加动态的class
+        var sh = 0;
+        $(document).on("click", ".addPost", function () {
+//        $(".addPost").click(function () {
+            sh++;
+            $(".addPt").append(
+                    '<div class="row">' +
+                    '<div class="col-sm-11 col-xs-10 postInput">' +
+                    '<p>' +
+                    '<input type="text" placeholder="社会职务" class="form-control social_functions' + sh + '" ng-model="social_functions"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="col-sm-1 col-xs-2">' +
+                    '<label class="glyphicon glyphicon-remove removePost" style="cursor: pointer; margin-top: 8px;"></label>' +
+                    '</div>' +
+                    '</div>'
+            )
+        });
+
+        // 删除社会职务
+        $(document).on("click", ".removePost", function () {
+            $(this).parent().parent().find("div").remove();
+        });
+
+        // 添加教育信息
+        var n = 0;
+        $(".addEdu").click(function () {
+            n++;
+            $(".showEdu").append(
+                    '<div class="well edu' + n + '">' +
+                    '<p class="pull-right glyphicon glyphicon-remove removeEdu" style="cursor: pointer"></p>' +
+                    '<p>' +
+                    '<input type="date" placeholder="开始时间" class="form-control start_time" ng-model="start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="date" placeholder="结束时间" class="form-control end_time" ng-model="end_time" />' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" placeholder="毕业学校" class="form-control school" ng-model="school"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" placeholder="专业" class="form-control major" ng-model="major" />' +
+                    '</p>' +
+                    '<p>' +
+                    '<select class="form-control academic_degree" ng-model="academic_degree">' +
+                    '<option value="学士">学士</option>' +
+                    '<option value="硕士">硕士</option>' +
+                    '<option value="博士">博士</option>' +
+                    '</select>' +
+                    '</p>' +
+                    '</div>'
+            )
+        });
+        // 移除教育经历
+        $(document).on("click", ".removeEdu", function () {
+            $(this).parent().remove();
+        });
+
+
+        // 添加履历
+        var m = 0;
+        $(".addPos").click(function () {
+            m++;
+            $(".yourPosition").append(
+                    '<div class="well addChild' + m + '">' +
+                    '<p class="pull-right glyphicon glyphicon-remove removeEdu" style="cursor: pointer"></p>' +
+                    '<p>' +
+                    '<select class="form-control postInfo postInfo' + m + '">' +
+                    '<option value="">职业经历</option>' +
+                    '<option value="1">律师</option>' +
+                    '<option value="2">法官</option>' +
+                    '<option value="3">检察官</option>' +
+                    '<option value="4">警察</option>' +
+                    '<option value="5">其它行政机关工作人员' +
+                    '</option>' +
+                    '<option value="6">公司法务</option>' +
+                    '<option value="7">仲裁员</option>' +
+                    '<option value="8">大学教师</option>' +
+                    '</select>' +
+                    '</p>' +
+                    '<div class="valueAll">' +
+                    '<div class="value1">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<select class="form-control lawyerType">' +
+                    '<option value="1">助理律师</option>' +
+                    '<option value="2">主办律师</option>' +
+                    '<option value="3">合伙人</option>' +
+                    '</select>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control lawyerNum" placeholder="执业证号"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value2">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value3">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value4">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value5">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职单位全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control department" placeholder="部门"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value6">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="离职公司全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control lawyerNum" placeholder="执业证号"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value7">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control firmName" placeholder="仲裁机构全称"/>' +
+                    '</p>' +
+                    '</div>' +
+                    '<div class="value8">' +
+                    '<p>' +
+                    '<label>开始时间:</label>' +
+                    '<input type="date" class="form-control start_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<label>结束时间:</label>' +
+                    '<input type="date" class="form-control end_time"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control schoolName" placeholder="学校全称"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control major" placeholder="专业"/>' +
+                    '</p>' +
+                    '<p>' +
+                    '<input type="text" class="form-control position" placeholder="职务"/>' +
+                    '</p></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+            );
+        });
+
+        // 职务信息选择框
+        var lawyer_experience = "";
+        $(document).on("change", ".postInfo", function () {
+            if ($(this).find("option:selected").val() == "1") {
+                $(this).parent().parent().find(".value1").show();
+                $(this).parent().parent().find(".value1").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "2") {
+                $(this).parent().parent().find(".value2").show();
+                $(this).parent().parent().find(".value2").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "3") {
+                $(this).parent().parent().find(".value3").show();
+                $(this).parent().parent().find(".value3").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "4") {
+                $(this).parent().parent().find(".value4").show();
+                $(this).parent().parent().find(".value4").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "5") {
+                $(this).parent().parent().find(".value5").show();
+                $(this).parent().parent().find(".value5").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "6") {
+                $(this).parent().parent().find(".value6").show();
+                $(this).parent().parent().find(".value6").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "7") {
+                $(this).parent().parent().find(".value7").show();
+                $(this).parent().parent().find(".value7").siblings().hide();
+            }
+            else if ($(this).find("option:selected").val() == "8") {
+                $(this).parent().parent().find(".value8").show();
+                $(this).parent().parent().find(".value8").siblings().hide();
+            }
+            else {
+                $(this).parent().parent().find(".value1, .value2, .value3, .value4, .value5, .value6, .value7, .value8").hide();
+            }
+        });
+
+
+        // 删除添加
+        $(document).on("click", ".remove", function () {
+            $(this).parent().parent().remove();
+        });
+
+        // 验证姓名
+        $(".name").blur(function () {
+            if ($(this).val() == "") {
+                $("#name").show();
+            }
+            else {
+                $("#name").hide();
+            }
+        });
+        // 验证省份
+        $(".province").blur(function () {
+            if ($(this).val() == "" && $(".country").val() == "中国") {
+                $("#province").show();
+            }
+            else {
+                $("#province").hide();
+            }
+        });
+        // 律所
+        $(".firm").blur(function () {
+            if ($(this).val() == "") {
+                $("#firm").show();
+            }
+            else {
+                $("#firm").hide();
+            }
+        });
+        // 所在城市
+        $(".city").blur(function () {
+            if ($(this).val() == "") {
+                $("#city").show();
+            }
+            else {
+                $("#city").hide();
+            }
+        });
+        // 验证手机号码
+        $(".phone").blur(function () {
+            if (!(/^1\d{10}$/.test($(this).val()))) {
+                $("#phone").show();
+            }
+            else {
+                $("#phone").hide();
+            }
+            // 验证数据库手机是否重复
+            $.ajax({
+                type: "get",
+                data: {phone: $(".phone").val()},
+                url: url + "lawyer/check_phone",
+                success: function (data) {
+                    console.log(data);
+                    $("#phone").show();
+                    $("#phone").text(data.message);
+                }
+            })
+        });
+        $("#sub").click(function () {
+            var name = $(".name").val();
+            var phone = $(".phone").val();
+            var sex = $(".sex option:selected").val();
+            var email = $(".email").val();
+            var firm = $(".firm").val();
+            var position = $(".position").val();
+            var tel = $(".tel").val();
+            var country = $(".country").val();
+            var province = $(".province option:selected").val();
+            var city = $(".city option:selected").val();
+            var address = $(".address").val();
+            var wechat = $(".wechat").val();
+            var hometown = $(".hometown").val();
+            var major = $(".mymajor option:selected").val();
+            var court_level = $(".court_level").val();
+            var business_court = $(".business_court").val();
+            var type = $(".type").val();
+            var cooperate = $(".cooperate").val();
+            var cooperate_suc = $(".cooperate_suc").val();
+            var exclusive = $(".exclusive").val();
+            var personality = $(".personality").val();
+            var synopsis = $(".synopsis").val();
+
+            if (name == "" || phone == "" || firm == "" || country == "" || major == "" || type == "") {
+                    alert("带星号的为必填字段");
+            }
+            else {
+                // 业绩字符串
+                var lawyer_rep = "";
+                for (var d = 0; d < y; d++) {
+                    if ($("#ach" + d + " .time").val() == "" || $("#ach" + d + " .content").val() == "") {
+                        $("#ach" + d + " .time").val("1970-10-01");
+                        $("#ach" + d + " .content").val("暂无");
+                    }
+                    lawyer_rep += $("#ach" + d + " .time").val() + "##" + $("#ach" + d + " .content").val() + "@@";
+                }
+                // 互动字符串
+                var lawyer_interact = "";
+                for (var j = 0; j < hd; j++) {
+                    if ($("#ins" + j + " .form").val() == "" || $("#ins" + j + " .details").val() == "" || $("#ins" + j + " .time").val() == "" || $("#ins" + j + " .comment").val() == "") {
+                        $("#ins" + j + " .form").val("暂无");
+                        $("#ins" + j + " .details").val("暂无");
+                        $("#ins" + j + " .time").val("1970-10-01");
+                        $("#ins" + j + " .comment").val("暂无");
+                    }
+                    lawyer_interact += $("#ins" + j + " .form").val() + "##" + $("#ins" + j + " .details").val() + "##" + $("#ins" + j + " .comment").val() + "##" + $("#ins" + j + " .time").val() + "@@";
+                }
+
+                // 律所类型
+                var firm_type = $(".firm_type input[type='radio']:checked").val();
+                // 非/团队管理律所
+                if ($(".team").prop("checked") == true) {
+                    team_type = $(".boss input").val();
+                }
+                else {
+                    team_type = 1;
+                }
+
+                var remark = $(".remark").val();
+                // 获取社会职务,拼接字符串
+                var social_functions = "";
+                for (var z = 1; z <= sh; z++) {
+                    social_functions += $(".social_functions" + z).val() + "##";
+                }
+
+                // 获取教育经历 拼接字符串
+                var lawyer_education = "";
+                for (var g = 1; g <= n; g++) {
+                    lawyer_education += $(".edu" + g + " .start_time").val() + "##" + $(".edu" + g + " .end_time").val() + "##" + $(".edu" + g + " .school").val() + "##" + $(".edu" + g + " .major").val() + "##" + $(".edu" + g + " .academic_degree option:selected").val() + "@@";
+                }
+
+                // 职业经历
+                for (var h = 1; h <= m; h++) {
+                    if ($(".postInfo" + h).find("option:selected").val() == "1") {
+                        lawyer_experience += $(".addChild" + h + " .value1 .start_time").val() + "##" + $(".addChild" + h + " .value1 .end_time").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value1 .lawyerNum").val() + "##" + $(".addChild" + h + " .value1 .lawyerType option:selected").text() + "##" + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "2") {
+                        lawyer_experience += $(".addChild" + h + " .value2 .start_time").val() + "##" + $(".addChild" + h + " .value2 .end_time").val() + "##" + $(".addChild" + h + " .value2 .firmName").val() + "##" + $(".addChild" + h + " .value2 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value2 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "3") {
+                        lawyer_experience += $(".addChild" + h + " .value3 .start_time").val() + "##" + $(".addChild" + h + " .value3 .end_time").val() + "##" + $(".addChild" + h + " .value3 .firmName").val() + "##" + $(".addChild" + h + " .value3 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value3 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "4") {
+                        lawyer_experience += $(".addChild" + h + " .value4 .start_time").val() + "##" + $(".addChild" + h + " .value4 .end_time").val() + "##" + $(".addChild" + h + " .value4 .firmName").val() + "##" + $(".addChild" + h + " .value4 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value4 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "5") {
+                        lawyer_experience += $(".addChild" + h + " .value5 .start_time").val() + "##" + $(".addChild" + h + " .value5 .end_time").val() + "##" + $(".addChild" + h + " .value5 .firmName").val() + "##" + $(".addChild" + h + " .value5 .department").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value5 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "6") {
+                        lawyer_experience += $(".addChild" + h + " .value6 .start_time").val() + "##" + $(".addChild" + h + " .value6 .end_time").val() + "##" + $(".addChild" + h + " .value6 .firmName").val() + "##" + " ##" + " ##" + $(".addChild" + h + " .value6 .lawyerNum").val() + $(".addChild" + h + " .value6 .position").val() + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "7") {
+                        lawyer_experience += $(".addChild" + h + " .value7 .start_time").val() + "##" + $(".addChild" + h + " .value7 .end_time").val() + "##" + $(".addChild" + h + " .value7 .firmName").val() + "##" + " ##" + " ##" + " ## " + "@@";
+                    }
+                    if ($(".postInfo" + h).find("option:selected").val() == "8") {
+                        lawyer_experience += $(".addChild" + h + " .value8 .start_time").val() + "##" + $(".addChild" + h + " .value8 .end_time").val() + "##" + $(".addChild" + h + " .value8 .schoolName").val() + "##" + $(".addChild" + h + " .value8 .major").val() + "##" + " ## " + " ##" + $(".addChild" + h + " .value8 .position").val() + "@@";
+                    }
+                }
+
+                // 如果填写其他国家
+                if (country != "中国") {
+                    province = "";
+                    city = "";
+                }
+                var data = {
+                    uid: sessionStorage.getItem("id"),
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    sex: sex,
+                    firm: firm,
+                    position: position,
+                    tel: tel,
+                    country: country,
+                    province: province,
+                    city: city,
+                    address: address,
+                    wechat: wechat,
+                    hometown: hometown,
+                    major: major,
+                    court_level: court_level,
+                    business_court: business_court,
+                    type: type,
+                    cooperate: cooperate,
+                    cooperate_suc: cooperate_suc,
+                    exclusive: exclusive,
+                    personality: personality,
+                    synopsis: synopsis,
+
+                    lawyer_rep: lawyer_rep,
+                    lawyer_interact: lawyer_interact,
+
+                    // 新加字段
+                    firm_type: firm_type,
+                    practice_areas: practice_areas,
+                    team_type: team_type,
+                    lawyer_edu: lawyer_education,
+                    lawyer_exp: lawyer_experience,
+                    social_functions: social_functions,
+                    remark: remark,
+                    info: ""
+                };
+                console.log(data);
+                if (confirm("您确定添加吗?")) {
+                    $.ajax({
+                        type: "post",
+                        data: data,
+                        dataType: "json",
+                        url: url + "lawyer/lawyer",
+                        success: function (data) {
+                            console.log(data);
+                            window.location.href = "index.html";
+                        }
+                    });
+                }
+                else {
+
+                }
+            }
+            console.log(data);
+        })
+    });
+</script>

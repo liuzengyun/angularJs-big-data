@@ -1,0 +1,174 @@
+{
+  "data": {
+    "jiangsu": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "1"
+    },
+    "henan": {
+      "value": "19",
+      "index": "2",
+      "stateInitColor": "1"
+    },
+    "anhui": {
+      "value": "17",
+      "index": "3",
+      "stateInitColor": "1"
+    },
+    "zhejiang": {
+      "value": "17",
+      "index": "4",
+      "stateInitColor": "1"
+    },
+    "liaoning": {
+      "value": "8",
+      "index": "5",
+      "stateInitColor": "1"
+    },
+    "beijing": {
+      "value": "4",
+      "index": "6",
+      "stateInitColor": "6"
+    },
+    "hubei": {
+      "value": "3",
+      "index": "1",
+      "stateInitColor": "1"
+    },
+    "jilin": {
+      "value": "2",
+      "index": "8",
+      "stateInitColor": "1"
+    },
+    "shanghai": {
+      "value": "2",
+      "index": "9",
+      "stateInitColor": "2"
+    },
+    "guangxi": {
+      "value": "2",
+      "index": "17",
+      "stateInitColor": "1"
+    },
+    "sichuan": {
+      "value": "1",
+      "index": "11",
+      "stateInitColor": "1"
+    },
+    "guizhou": {
+      "value": "1",
+      "index": "12",
+      "stateInitColor": "1"
+    },
+    "hunan": {
+      "value": "1",
+      "index": "13",
+      "stateInitColor": "1"
+    },
+    "shandong": {
+      "value": "1",
+      "index": "14",
+      "stateInitColor": "1"
+    },
+    "guangdong": {
+      "value": "1",
+      "index": "15",
+      "stateInitColor": "4"
+    },
+    "jiangxi": {
+      "value": "1",
+      "index": "16",
+      "stateInitColor": "1"
+    },
+    "fujian": {
+      "value": "1",
+      "index": "17",
+      "stateInitColor": "1"
+    },
+    "yunnan": {
+      "value": "1",
+      "index": "18",
+      "stateInitColor": "1"
+    },
+    "hainan": {
+      "value": "1",
+      "index": "19",
+      "stateInitColor": "1"
+    },
+    "shanxi": {
+      "value": "1",
+      "index": "27",
+      "stateInitColor": "1"
+    },
+    "hebei": {
+      "value": "1",
+      "index": "21",
+      "stateInitColor": "1"
+    },
+    "neimongol": {
+      "value": "1",
+      "index": "22",
+      "stateInitColor": "3"
+    },
+    "tianjin": {
+      "value": "1",
+      "index": "23",
+      "stateInitColor": "1"
+    },
+    "gansu": {
+      "value": "1",
+      "index": "24",
+      "stateInitColor": "3"
+    },
+    "shaanxi": {
+      "value": "1",
+      "index": "25",
+      "stateInitColor": "3"
+    },
+    "macau": {
+      "value": "1",
+      "index": "26",
+      "stateInitColor": "1"
+    },
+    "hongkong": {
+      "value": "1",
+      "index": "27",
+      "stateInitColor": "1"
+    },
+    "taiwan": {
+      "value": "1",
+      "index": "28",
+      "stateInitColor": "1"
+    },
+    "qinghai": {
+      "value": "1",
+      "index": "29",
+      "stateInitColor": "3"
+    },
+    "xizang": {
+      "value": "1",
+      "index": "37",
+      "stateInitColor": "1"
+    },
+    "ningxia": {
+      "value": "1",
+      "index": "31",
+      "stateInitColor": "3"
+    },
+    "xinjiang": {
+      "value": "1",
+      "index": "32",
+      "stateInitColor": "3"
+    },
+    "heilongjiang": {
+      "value": "1",
+      "index": "33",
+      "stateInitColor": "1"
+    },
+    "chongqing": {
+      "value": "1",
+      "index": "34",
+      "stateInitColor": "1"
+    }
+  }
+}

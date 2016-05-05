@@ -1,0 +1,386 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>帮瀛大数据 | 数据概览</title>
+    <link rel="icon" href="../dist/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../dist/img/favicon.ico" type="image/x-icon"/>
+    <link rel="BOOKMARK" href="../dist/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-1.4.8.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/lib/raphael-min.js"></script>
+
+    <script type="text/javascript" src="js/res/chinaMapConfig.js"></script>
+    <script type="text/javascript" src="js/res/worldMapConfig.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/client.js"></script>
+
+    <!--highmap统计图插件-->
+    <script src="js/lib/highcharts.js"></script>
+    <style type="text/css">
+        ${demo.css}
+    </style>
+</head>
+<body>
+
+<!--导航栏-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                <img src="images/logo.png" style="height: 30px"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        律师 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">数据概览</a></li>
+                        <li><a href="../business/index.html" target="_blank">操作台</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"  style="color: #fff">
+                        客户 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="client.html">数据概览</a></li>
+                        <li><a href="../market/index.html" target="_blank">操作台</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <br/>
+    <br/>
+    <div class="row">
+        <h4 class="titleLawyer">客户增长</h4>
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <div class="btn-group pull-right"  data-toggle="buttons" style="margin-bottom: 20px;">
+                <button class="btn btn-primary week active">周</button>
+                <button class="btn btn-primary month">月</button>
+                <button class="btn btn-primary season">季度</button>
+            </div>
+            <div id="container" style="margin: 0 auto"></div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div ng-view>
+
+    </div>
+    <div class="row" ng-controller="clientLast">
+        <h4 class="titleLawyer">行业统计</h4>
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <div id="container-2" style="margin: 0 auto"></div>
+        </div>
+    </div>
+    <div ng-include="'footer.html'"></div>
+</div>
+<!--客户增长统计图-->
+<script type="text/javascript">
+    $(function() {
+        function weekData() {
+            $.ajax({
+                type: "get",
+                url: url+"boss/client_increase",
+                data: {type: "week"},
+                success: function (data) {
+                    var weekname1 = data.data.week[0].name;
+                    var weekname2 = data.data.week[1].name;
+                    var weekname3 = data.data.week[2].name;
+                    var weekname4 = data.data.week[3].name;
+
+                    var weeknum1 = parseInt(data.data.week[0].num);
+                    var weeknum2 = parseInt(data.data.week[1].num);
+                    var weeknum3 = parseInt(data.data.week[2].num);
+                    var weeknum4 = parseInt(data.data.week[3].num);
+
+
+                    console.log(data);
+                    var series = [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: weekname1,
+                                color: "#ec6b27",
+                                y: weeknum1
+                            },
+                            {
+                                name: weekname2,
+                                color: "#f5b32b",
+                                y: weeknum2
+                            },
+                            {
+                                name: weekname3,
+                                color: "#25b38b",
+                                y: weeknum3
+                            },
+                            {
+                                name: weekname4,
+                                color: "#5c69ad",
+                                y: weeknum4
+                            }
+                        ]
+                    }];
+                    $('#container').highcharts({
+                        chart: {
+                            type: 'column',
+                            backgroundColor: 'rgba(255, 255, 255, 0)'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+                        },
+                        yAxis: {
+                            title: {
+                                text: '增长人数'
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        plotOptions: {
+                            series: {
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.y}'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '{point.y}',
+                            // 经过的显示的内容
+                            pointFormat: ''
+                        },
+                        // 这是动态数据,统计图的,以后要在前面angularJS获取定义变量,在这里调用.
+                        series: series
+                    });
+                }
+            })
+        }
+        function monthData() {
+            $.ajax({
+                type: "get",
+                url: url+"boss/client_increase",
+                data: {type: "month"},
+                success: function (data) {
+                    var monthname1 = data.data.month[0].name;
+                    var monthname2 = data.data.month[1].name;
+                    var monthname3 = data.data.month[2].name;
+                    var monthname4 = data.data.month[3].name;
+
+                    var monthnum1 = parseInt(data.data.month[0].num);
+                    var monthnum2 = parseInt(data.data.month[1].num);
+                    var monthnum3 = parseInt(data.data.month[2].num);
+                    var monthnum4 = parseInt(data.data.month[3].num);
+
+
+                    console.log(data);
+                    var series = [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: monthname1,
+                                color: "#ec6b27",
+                                y: monthnum1
+                            },
+                            {
+                                name: monthname2,
+                                color: "#f5b32b",
+                                y: monthnum2
+                            },
+                            {
+                                name: monthname3,
+                                color: "#25b38b",
+                                y: monthnum3
+                            },
+                            {
+                                name: monthname4,
+                                color: "#5c69ad",
+                                y: monthnum4
+                            }
+                        ]
+                    }];
+                    $('#container').highcharts({
+                        chart: {
+                            type: 'column',
+                            backgroundColor: 'rgba(255, 255, 255, 0)'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+                        },
+                        yAxis: {
+                            title: {
+                                text: '增长人数'
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        plotOptions: {
+                            series: {
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.y}'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '{point.y:}',
+                            // 经过的显示的内容
+                            pointFormat: ''
+                        },
+                        // 这是动态数据,统计图的,以后要在前面angularJS获取定义变量,在这里调用.
+                        series: series
+                    });
+                }
+            })
+        }
+        function seasonData() {
+            $.ajax({
+                type: "get",
+                url: url+"boss/client_increase",
+                data: {type: "season"},
+                success: function (data) {
+                    var seasonname1 = data.data.season[0].name;
+                    var seasonname2 = data.data.season[1].name;
+                    var seasonname3 = data.data.season[2].name;
+                    var seasonname4 = data.data.season[3].name;
+
+                    var seasonnum1 = parseInt(data.data.season[0].num);
+                    var seasonnum2 = parseInt(data.data.season[1].num);
+                    var seasonnum3 = parseInt(data.data.season[2].num);
+                    var seasonnum4 = parseInt(data.data.season[3].num);
+
+
+                    console.log(data);
+                    var series = [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: seasonname1,
+                                color: "#ec6b27",
+                                y: seasonnum1
+                            },
+                            {
+                                name: seasonname2,
+                                color: "#f5b32b",
+                                y: seasonnum2
+                            },
+                            {
+                                name: seasonname3,
+                                color: "#25b38b",
+                                y: seasonnum3
+                            },
+                            {
+                                name: seasonname4,
+                                color: "#5c69ad",
+                                y: seasonnum4
+                            }
+                        ]
+                    }];
+                    $('#container').highcharts({
+                        chart: {
+                            type: 'column',
+                            backgroundColor: 'rgba(255, 255, 255, 0)'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+                        },
+                        yAxis: {
+                            title: {
+                                text: '增长人数'
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        plotOptions: {
+                            series: {
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.y}'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '{point.y}',
+                            // 经过的显示的内容
+                            pointFormat: ''
+                        },
+                        // 这是动态数据,统计图的,以后要在前面angularJS获取定义变量,在这里调用.
+                        series: series
+                    });
+                }
+            })
+        }
+        // 周
+        weekData();
+        $(".week").click(function() {
+            weekData();
+        });
+        $(".month").click(function() {
+            monthData();
+        });
+        $(".season").click(function() {
+            seasonData();
+        });
+        $(".btn-group button").click(function() {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        })
+    });
+</script>
+</body>
+</html>

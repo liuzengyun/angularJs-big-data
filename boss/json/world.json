@@ -1,0 +1,849 @@
+{
+  "data": {
+    "AE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AF": {
+      "value": "7",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "AL": {
+      "value": "7",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AM": {
+      "value": "3",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AO": {
+      "value": "3",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AR": {
+      "value": "7",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AT": {
+      "value": "7",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AU": {
+      "value": "3",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "AZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BD": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BF": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BI": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "BJ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "BZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "CD": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CF": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CI": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "2"
+    },
+    "CO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CU": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "CZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "DE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "DJ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "DK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "DO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "DZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "EC": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "EE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "EG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "EH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ER": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ES": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ET": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "FI": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "FJ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "FK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "FR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "GA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GB": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GF": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GQ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "GY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "HN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "HR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "HT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "HU": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "ID": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IQ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IS": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "IT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "JM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "JO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "JP": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "KE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "KG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "KH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "KP": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "KR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "KW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "KZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "LA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LB": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LS": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LU": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LV": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "LY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MD": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ML": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "MR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MX": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "MZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NC": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NI": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NP": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "NZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "OM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PS": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PT": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "PY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "QA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "RO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "RS": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "RU": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "0"
+    },
+    "RW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SB": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SD": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SJ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SK": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SO": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SV": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "SZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TD": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TH": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TJ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TL": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TR": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "TZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "UA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "UG": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "US": {
+      "value": "37",
+      "index": "100",
+      "stateInitColor": "0"
+    },
+    "UY": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "UZ": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "VE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "VN": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "VU": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "YE": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ZA": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ZM": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    },
+    "ZW": {
+      "value": "37",
+      "index": "1",
+      "stateInitColor": "7"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+<section class="content">
+    <div class="row">
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <input type="input" class="form-control" placeholder="姓名" ng-model="name"/>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <input type="input" class="form-control" placeholder="律所" ng-model="firm"/>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p><input type="input" class="form-control" placeholder="所在城市" ng-model="city"/></p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <select class="form-control" ng-model="sex">
+                    <option value="" selected="selected">性别</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p><input type="input" class="form-control" placeholder="所在省份" ng-model="province"/></p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <p>
+                <select class="form-control" ng-model="input_mode">
+                    <option value="" selected="selected">进入数据库方式</option>
+                    <option value="1">excel导入</option>
+                    <option value="2">手工录入</option>
+                    <option value="3">律师入驻</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <select class="form-control major" ng-model="major">
+                <option value="" selected="selected">专业</option>
+                <option value="1">民事</option>
+                <option value="2">商事</option>
+                <option value="3">知识产权</option>
+                <option value="4">涉外</option>
+                <option value="5">刑事</option>
+                <option value="6">行政</option>
+                <option value="7">环保</option>
+            </select>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <div class="form-group">
+                <select class="form-control court_level hide_one" ng-model="business_court">
+                    <option value="" selected="selected">原业务庭室</option>
+                    <option value="0">没有</option>
+                    <option value="1">民事</option>
+                    <option value="2">商事</option>
+                    <option value="3">知识产权</option>
+                    <option value="4">涉外</option>
+                    <option value="5">刑事</option>
+                    <option value="6">行政</option>
+                    <option value="7">环保</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <div class="form-group">
+                <select class="form-control business_court hide_two" ng-model="court_level">
+                    <option value="" selected="selected">原执业法院级别</option>
+                    <option value="0">没有</option>
+                    <option value="1">最高院</option>
+                    <option value="2">高院</option>
+                    <option value="3">中院</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6 pull-right text-right">
+            <button class="btn btn-primary btn-sm" ng-click="search()">点击搜索</button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <!--查询失败显示查询失败提示信息-->
+        <div class="container">
+            <div class="no_info" style="display: none;">
+                暂无信息
+            </div>
+        </div>
+
+        <!-- 循环显示数据 -->
+        <div class="col-lg-4 col-xs-6" ng-repeat="info in result">
+            <div class="box box-solid bg-light-blue-gradient">
+                <div class="box-header">
+                    <div class="pull-right box-tools lawyerInfo">
+                        <!--单击传递lid-->
+                        <i class="glyphicon glyphicon-star" ng-click="collection(info.lid)" style="cursor: pointer"></i>
+                        &nbsp;
+                        <i class="glyphicon glyphicon-remove" ng-click="deleteLawyer(info.lid)" style="cursor: pointer"></i>
+                    </div>
+                </div>
+                <a href="#/lawyerInfo/{{info.lid}}">
+                    <div class="box-body border-radius-none">
+                        <div class="small-box">
+                            <div class="inner">
+                                <p class="borderBottom"><span style="font-size: 20px;">{{info.name}}</span>
+                                </p>
+                                <p style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"><span class="glyphicon glyphicon-home"></span> {{info.firm}}</p>
+                                <p><span class="glyphicon glyphicon-phone"></span> {{info.phone}} </p>
+                            </div>
+                            <div class="icon" style="top: 0px">
+                                <!--这里使用angularjs的表达式判断-->
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ul id="page">
+            <li>
+                <a ng-click="pageClick(pre)">
+                    上一页
+                </a>
+            </li>
+            <li ng-repeat="pageInfo in arr">
+                <a ng-click="pageClick(pageInfo)">{{pageInfo==0 ? pageInfo='首页': pageInfo}}</a>
+            </li>
+            <!--<li>-->
+            <!--<a ng-click="pageClick(page)">-->
+            <!--末页-->
+            <!--</a>-->
+            <!--</li>-->
+            <li>
+                <a ng-click="pageClick(current)">
+                    下一页
+                </a>
+            </li>
+            <li>
+                当前页:<span style="color: red">{{current > 1 ? current-1 : 1}}</span>
+            </li>
+            <li>
+                <span>总条数: {{rows}}</span>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--分页-->
